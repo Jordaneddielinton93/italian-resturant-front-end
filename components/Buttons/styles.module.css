@@ -1,0 +1,26 @@
+.container{
+    width:105px ;
+    height: 30px;
+    background-color: aqua;
+    border-radius: 30px;
+    border: solid white 2px;
+    color: black;
+    background: rgb(0,146,70);
+background: linear-gradient(90deg, rgba(0,146,70,1) 0%, rgba(255,255,255,1) 50%, rgba(206,43,55,1) 100%);
+font-weight: 600;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50px ;
+    height: 50px;
+    border-radius: 30px;
+    border: solid white 2px;
+    color: black;
+    /* background: rgb(0,146,70); */
+background: linear-gradient(90deg, rgba(0,146,70,1) 0%, rgba(255,255,255,1) 50%, rgba(206,43,55,1) 100%);
+font-weight: 600;
+font-size: 50px;
+}

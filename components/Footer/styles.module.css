@@ -1,0 +1,43 @@
+.container{
+    height: 270px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #353643;
+    position: relative;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.container_DatesContainer{
+    color: white;
+}
+
+.container_ImagesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 182px;
+    height: 125px;   
+}
+.container_ImagesContainer span{
+    width: 55px;
+    height: 55px;
+    background-color: aquamarine;
+    border: solid thin white;
+    border-radius: 10px;
+    background-image: url("/images/Footer/FoodImg.png");
+}
+.container_bottomIMG{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 53px;
+    background-image: url("/images/Footer/footerimg.png");
+    background-size: contain;
+    background-color: aliceblue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+}
