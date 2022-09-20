@@ -1,38 +1,35 @@
-import { addInistialRecipeFavouriteBasket } from "@/components/01-Reducers/resturantSlice";
 import CategorieButtons from "@/components/CategorieButtons/CategorieButtons";
 import HeroImageBasket from "@/components/HeroImageBasket/HeroImageBasket";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
-import { useGetLocalStorageLikeBasket } from "@/components/libs/useGetLocalStorageLikeBasket";
 import RecipeCards from "@/components/RecipeCards/RecipeCards";
 import Head from "next/head";
-import React, { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useCallback, useState } from "react";
+import { server } from "../config/index.js";
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:5001/recipes");
-  const recipes = await res.json();
+  const res = await fetch(`${server}/api/cookingrecipes`);
+  const { rows } = await res.json();
   return {
     props: {
-      recipes,
+      rows,
     }, // will be passed to the page component as props
   };
 }
 
 export type recipesTypes = {
-  recipeId: number;
-  recipeImage: string;
-  recipeDiscription: string;
-  recipeTitle: string;
-  recipeCookTime: number;
-  recipeHowTo: string;
-  recipeIngridients: string[];
-  recipeRatings: number;
+  recipeid: number;
+  recipeimage: string;
+  recipediscription: string;
+  recipetitle: string;
+  recipecooktime: number;
+  recipehowto: string;
+  recipeingridients: string[];
+  reciperatings: number;
   tags: string[];
 }[];
 
-export default function recipes({ recipes }: { recipes: recipesTypes }) {
+export default function recipes({ rows: recipes }: { rows: recipesTypes }) {
   let [recipeTag, setRecipeTag] = useState("Holiday Recipes");
-
   let handleClickChooseTag = useCallback(
     (tag: string) => setRecipeTag(tag),
     []

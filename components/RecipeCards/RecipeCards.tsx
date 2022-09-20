@@ -18,7 +18,7 @@ function RecipeCards(recipes: { recipes: recipesTypes; recipeTag: string }) {
     setCardModalInfo(getSpecificCard(recipes.recipes, recipeId));
     onOpen();
   };
-
+  console.log(cardModalInfo);
   return (
     <Flex minH={"350px"} w="95%" margin={"0 auto"} flexDir="column">
       <Button
@@ -32,28 +32,28 @@ function RecipeCards(recipes: { recipes: recipesTypes; recipeTag: string }) {
       <Flex as={"ul"} flexWrap="wrap" gap={"20px"} justifyContent="center">
         {recipes.recipes.map(
           ({
-            recipeId,
-            recipeTitle,
-            recipeDiscription,
-            recipeImage,
-            recipeIngridients,
-            recipeCookTime,
-            recipeHowTo,
-            recipeRatings,
+            recipeid,
+            recipetitle,
+            recipediscription,
+            recipeimage,
+            recipeingridients,
+            recipecooktime,
+            recipehowto,
+            reciperatings,
             tags,
           }) => {
             return (
               (tags.includes(recipeTag) || recipeTag.length == 0) && (
                 <RecipeCard
-                  key={recipeId}
-                  recipeId={recipeId}
-                  handleClick={() => handleClick(recipeId)}
-                  Img={recipeImage}
-                  Alt={recipeTitle}
-                  Title={recipeTitle}
-                  Discription={recipeDiscription}
-                  Timer={recipeCookTime}
-                  Rating={recipeRatings}
+                  key={recipeid}
+                  recipeId={recipeid}
+                  handleClick={() => handleClick(recipeid)}
+                  Img={recipeimage}
+                  Alt={recipetitle}
+                  Title={recipetitle}
+                  Discription={recipediscription}
+                  Timer={recipecooktime}
+                  Rating={reciperatings}
                 />
               )
             );
