@@ -29,7 +29,7 @@ export type recipesTypes = {
 }[];
 
 export default function recipes({ data }: { data: recipesTypes }) {
-  let [recipeTag, setRecipeTag] = useState("Holiday Recipes");
+  let [recipeTag, setRecipeTag] = useState("");
   console.log(data);
   let handleClickChooseTag = useCallback(
     (tag: string) => setRecipeTag(tag),
