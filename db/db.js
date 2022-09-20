@@ -1,8 +1,7 @@
 import { Pool } from "pg";
 
 const pool = new Pool({
-  connectionString:
-    "postgres://qzbjjbtc:JTqhNEQwyXsmIbSypS9xGQNwCghQJucb@tyke.db.elephantsql.com/qzbjjbtc",
+  connectionString: process.env.NEXT_CONNECTIONSTRING,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,

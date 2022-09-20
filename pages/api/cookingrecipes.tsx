@@ -5,6 +5,6 @@ export default async function cookingrecipes(
   res: NextApiResponse
 ) {
   let data = await query(`SELECT * FROM recipes`);
-  res.json(data);
+  res.json(data.rows);
   console.log(data);
 }
