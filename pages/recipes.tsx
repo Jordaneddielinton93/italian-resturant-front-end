@@ -8,10 +8,10 @@ import { server } from "../config/index.js";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
-  const { rows } = await res.json();
+  const data = await res.json();
   return {
     props: {
-      rows,
+      data,
     }, // will be passed to the page component as props
   };
 }
@@ -28,8 +28,9 @@ export type recipesTypes = {
   tags: string[];
 }[];
 
-export default function recipes({ rows: recipes }: { rows: recipesTypes }) {
+export default function recipes({ data }: { data: recipesTypes }) {
   let [recipeTag, setRecipeTag] = useState("Holiday Recipes");
+  console.log(data);
   let handleClickChooseTag = useCallback(
     (tag: string) => setRecipeTag(tag),
     []
@@ -44,7 +45,7 @@ export default function recipes({ rows: recipes }: { rows: recipesTypes }) {
 
       <HeroImageBasket />
       <CategorieButtons handleClickChooseTag={handleClickChooseTag} />
-      <RecipeCards recipes={recipes} recipeTag={recipeTag} />
+      <RecipeCards recipes={data} recipeTag={recipeTag} />
       <ImageCarousel />
     </div>
   );
