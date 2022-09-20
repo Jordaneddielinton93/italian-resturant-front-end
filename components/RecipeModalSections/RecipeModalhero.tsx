@@ -4,17 +4,17 @@ import React from "react";
 import LikeRecipeButton from "../Buttons/LikeRecipeButton";
 
 type Props = {
-  foodTitle: string;
-  foodDiscription: string;
-  foodImage: string;
-  foodId: number;
+  foodtitle: string;
+  fooddiscription: string;
+  foodimage: string;
+  foodid: number;
 };
 
 export default function RecipeModalhero({
-  foodTitle,
-  foodDiscription,
-  foodImage,
-  foodId,
+  foodtitle,
+  fooddiscription,
+  foodimage,
+  foodid,
 }: Props) {
   return (
     <Flex
@@ -41,7 +41,7 @@ export default function RecipeModalhero({
           justifyContent={"space-between"}
         >
           <Text as={"h3"} fontSize="20px" fontWeight={"semibold"}>
-            {foodTitle}
+            {foodtitle}
           </Text>
           <Text
             fontSize={["11px", "16px", "20px", "20px"]}
@@ -49,18 +49,18 @@ export default function RecipeModalhero({
             w={["100%"]}
             overflowY={"scroll"}
           >
-            {foodDiscription}
+            {fooddiscription}
           </Text>
           <Flex w={"100%"} flexDir="column" alignItems={"center"}>
-            <LikeRecipeButton recipeId={foodId} />
+            <LikeRecipeButton recipeId={foodid} />
             {"Add To Favourite "}
           </Flex>
         </Flex>
 
         <Image
           src={
-            foodImage
-              ? foodImage
+            foodimage
+              ? foodimage
               : "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           }
           objectFit="contain"

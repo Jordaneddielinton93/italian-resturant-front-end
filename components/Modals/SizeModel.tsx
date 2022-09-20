@@ -15,14 +15,14 @@ type SizeModelProp = {
   isOpen: boolean;
   onClose: () => void;
   cardModalInfo: {
-    recipeId: number;
-    recipeImage: string;
-    recipeDiscription: string;
-    recipeTitle: string;
-    recipeCookTime: number;
-    recipeHowTo: string;
-    recipeIngridients: string[];
-    recipeRatings: number;
+    recipeid: number;
+    recipeimage: string;
+    recipediscription: string;
+    recipetitle: string;
+    recipecooktime: number;
+    recipehowto: string;
+    recipeingridients: string[];
+    reciperatings: number;
     tags: string[];
   };
 };
@@ -32,6 +32,7 @@ export default function SizeModel({
   onClose,
   cardModalInfo,
 }: SizeModelProp) {
+  console.log(cardModalInfo);
   return (
     <>
       <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>
@@ -42,14 +43,14 @@ export default function SizeModel({
           p={["50px 0px", "50px 0px", "50px 20px", "50px 20px"]}
         >
           <RecipeModalhero
-            foodId={cardModalInfo.recipeId}
-            foodTitle={cardModalInfo.recipeTitle}
-            foodDiscription={cardModalInfo.recipeDiscription}
-            foodImage={cardModalInfo.recipeImage}
+            foodid={cardModalInfo?.recipeid}
+            foodtitle={cardModalInfo?.recipetitle}
+            fooddiscription={cardModalInfo?.recipediscription}
+            foodimage={cardModalInfo?.recipeimage}
           />
-          <RecipeModeInstructions recipeHowTo={cardModalInfo.recipeHowTo} />
+          <RecipeModeInstructions recipeHowTo={cardModalInfo?.recipehowto} />
           <RecipeModelIngridents
-            recipeIngridients={cardModalInfo.recipeIngridients}
+            recipeIngridients={cardModalInfo?.recipeingridients}
           />
           <ModalCloseButton />
           <ModalFooter>

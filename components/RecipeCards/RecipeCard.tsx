@@ -30,7 +30,7 @@ export default function RecipeCard({
   handleClick,
 }: Props) {
   let state = useSelector((state: any) => state.resturant);
-
+  console.log(Img, Alt, Title, Discription, Timer, Rating, recipeId);
   return (
     <Flex
       onClick={handleClick}

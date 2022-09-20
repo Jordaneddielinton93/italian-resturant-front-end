@@ -6,6 +6,7 @@ type Props = {
 };
 
 export default function RecipeModelIngridents({ recipeIngridients }: Props) {
+  console.log(recipeIngridients);
   return (
     <Flex
       flexDir={"column"}
