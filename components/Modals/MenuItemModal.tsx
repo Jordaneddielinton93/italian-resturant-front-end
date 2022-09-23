@@ -37,7 +37,6 @@ export default function MenuItemModel({
   cardModalInfo,
 }: SizeModelProp) {
   // let state = useSelector((state: any) => state.resturant);
-
   let dispatch = useDispatch();
   let inputQuantityRef = useRef<any>({ value: "" });
   return (
