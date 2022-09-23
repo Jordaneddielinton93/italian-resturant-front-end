@@ -27,11 +27,9 @@ export default function NavMenu({}: Props) {
         <MenuList>
           <MenuGroup title="Pages">
             <MenuItem>
-              {" "}
-              <Link href="/">Menu</Link>
+              <Link href="/menu">Menu</Link>
             </MenuItem>
             <MenuItem>
-              {" "}
               <Link href="/recipes">Recipes</Link>
             </MenuItem>
             <MenuItem>

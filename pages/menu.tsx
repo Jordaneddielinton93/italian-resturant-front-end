@@ -1,10 +1,12 @@
+import BookingProcess from "@/components/BookingProcess/BookingProcess";
 import CategorieButtons from "@/components/CategorieButtons/CategorieButtons";
-import HeroImageBasket from "@/components/HeroImageBasket/HeroImageBasket";
-import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
-import RecipeCards from "@/components/RecipeCards/RecipeCards";
+import MenuBasketAndFavourite from "@/components/MenuBasketAndFavourite/MenuBasketAndFavourite";
+import { Box, Flex } from "@chakra-ui/react";
+import MenuCardItems from "MenuCardItems/MenuCardItems";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import { server } from "../config/index.js";
+import { recipesTypes } from "./recipes.jsx";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
@@ -16,19 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-export type recipesTypes = {
-  recipeid: number;
-  recipeimage: string;
-  recipediscription: string;
-  recipetitle: string;
-  recipecooktime: number;
-  recipehowto: string;
-  recipeingridients: string[];
-  reciperatings: number;
-  tags: string[];
-}[];
-
-export default function recipes({ data }: { data: recipesTypes }) {
+export default function Menu({ data }: { data: recipesTypes }) {
   let [recipeTag, setRecipeTag] = useState("");
   let handleClickChooseTag = useCallback(
     (tag: string) => setRecipeTag(tag),
@@ -36,19 +26,20 @@ export default function recipes({ data }: { data: recipesTypes }) {
   );
 
   return (
-    <div>
+    <Box padding={"0 20px"}>
       <Head>
-        <title>Bowles - Recipes</title>
+        <title>Bowles - Home </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <HeroImageBasket />
+      <BookingProcess />
       <CategorieButtons
-        recipeTag={recipeTag}
         handleClickChooseTag={handleClickChooseTag}
+        recipeTag={recipeTag}
       />
-      <RecipeCards recipes={data} recipeTag={recipeTag} />
-      <ImageCarousel />
-    </div>
+      <Flex borderTop={"solid thin black"} justifyContent="space-between">
+        <MenuCardItems recipes={data} />
+        <MenuBasketAndFavourite recipes={data} />
+      </Flex>
+    </Box>
   );
 }

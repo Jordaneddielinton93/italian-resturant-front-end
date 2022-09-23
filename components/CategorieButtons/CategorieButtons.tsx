@@ -28,23 +28,23 @@ let iconsAndTitles: IiconsAndTitle[] = [
 ];
 
 function CategorieButtons({
+  recipeTag,
   handleClickChooseTag,
 }: {
   handleClickChooseTag: any;
+  recipeTag: string;
 }) {
   const [isLargerThan390] = useMediaQuery("(min-width: 480px)");
-  console.log("helloo");
   return (
     <Flex
-      h={"200px"}
+      h={"130px"}
       width="100%"
       flexDir={"column"}
       w="95%"
       margin={"0px auto"}
       justifyContent="center"
     >
-      <chakra.h3 fontWeight={"bold"}>Categories</chakra.h3>
-      <Flex justifyContent={"space-evenly"}>
+      <Flex justifyContent={"space-between"}>
         {iconsAndTitles.map(({ icon, title }, index) => {
           return isLargerThan390 || index < 4 ? (
             <Flex
@@ -53,14 +53,14 @@ function CategorieButtons({
               w={["80px", "55px", "90px", "90px"]}
               h={["80px", "55px", "90px", "90px"]}
               flexDir={"column"}
-              border="solid 2px #ECECF0"
+              border={`solid 2px ${recipeTag == title ? "red" : "#ECECF0"}`}
               alignItems="center"
               justifyContent={"center"}
               fontSize={["22px", "22px", "22px", "22px"]}
               p={"2px"}
               marginTop={"10px"}
               cursor="pointer"
-              _hover={{ bg: "#ECECF0", borderColor: "black" }}
+              _hover={{ bg: "#ECECF0", borderColor: `green` }}
             >
               {icon}
               <chakra.h3

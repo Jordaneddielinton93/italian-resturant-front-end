@@ -42,27 +42,19 @@ export default function Navigation({}) {
         justifyContent="space-between"
         listStyleImage="none"
       >
-        <li>
-          <Link href="/">Menu</Link>
-        </li>
-        <li>
-          <Link href="/recipes">Recipes</Link>
-        </li>
-        <li>
-          <Link href="/about">About</Link>
-        </li>
+        <Link href="/menu">Menu</Link>
 
-        <li>
-          <Link href="/">Contact</Link>
-        </li>
+        <Link href="/recipes">Recipes</Link>
 
-        <li>
-          <Link href="/">FAQ</Link>
-        </li>
+        <Link href="/about">About</Link>
+
+        <Link href="/">Contact</Link>
+
+        <Link href="/">FAQ</Link>
       </Box>
       <Flex
         zIndex={5}
-        w={["120px", "120px", "50px", "50px"]}
+        w={["120px", "120px", "60px", "70px"]}
         justify={"space-between"}
         alignItems="center"
       >

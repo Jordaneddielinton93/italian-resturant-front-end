@@ -1,3 +1,5 @@
+import BookingProcess from "../BookingProcess/BookingProcess";
+
 type IFoodCarouselItems = {
   png: string;
   bg: string[];
@@ -164,5 +166,27 @@ export const FoodCarouselUserItems: IFoodCarouselItems = [
     bg: ["brand.green.100", "brand.green.200"],
     foodName: "Spaggetti",
     foodPrice: 2.0,
+  },
+];
+
+import { GiBasket, GiCheckMark, GiKnifeFork } from "react-icons/gi";
+import { MdEventSeat } from "react-icons/md";
+
+export let BookingProcessArr = [
+  {
+    icon: <GiKnifeFork />,
+    title: "Menu",
+  },
+  {
+    icon: <GiBasket />,
+    title: "Basket",
+  },
+  {
+    icon: <MdEventSeat />,
+    title: "Seat",
+  },
+  {
+    icon: <GiCheckMark />,
+    title: "Checkout",
   },
 ];
