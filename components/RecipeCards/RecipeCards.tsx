@@ -13,12 +13,12 @@ function RecipeCards(recipes: { recipes: recipesTypes; recipeTag: string }) {
   let [cardModalInfo, setCardModalInfo] = useState(
     getSpecificCard(recipes.recipes, randomRecipeId)
   );
+
   // ^^ handles what modal card info is shown ,inistial default set to random card
   const handleClick = (recipeId: any) => {
     setCardModalInfo(getSpecificCard(recipes.recipes, recipeId));
     onOpen();
   };
-  console.log(cardModalInfo);
   return (
     <Flex minH={"350px"} w="95%" margin={"0 auto"} flexDir="column">
       <Button

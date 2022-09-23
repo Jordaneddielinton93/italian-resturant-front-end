@@ -10,7 +10,7 @@ type Props = {
   price: number;
   borderColor?: any;
   tags: string[];
-  recipeRating: number;
+  handleCardClick: () => void;
 };
 
 export default function FoodMealsCard({
@@ -20,9 +20,11 @@ export default function FoodMealsCard({
   price,
   borderColor,
   tags,
+  handleCardClick,
 }: Props) {
   return (
     <Flex
+      onClick={handleCardClick}
       h="250px"
       w="172px"
       minW={"172px"}
@@ -44,7 +46,9 @@ export default function FoodMealsCard({
         zIndex={1}
         boxShadow="rgba(0, 0, 0, 0.1) 0px 4px 12px;"
         backgroundImage={
-          "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          image
+            ? image
+            : "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
         }
         backgroundPosition="center"
         backgroundSize={"cover"}
@@ -70,7 +74,7 @@ export default function FoodMealsCard({
         bottom={"40px"}
         right="15px"
       >
-        {title}
+        {title.slice(0, 20)}
       </Text>
       <StarRatings rating={rating} left="40px" bottom="14px" />
       <Text

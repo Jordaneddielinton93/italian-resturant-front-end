@@ -5,6 +5,7 @@ import { chakra } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import HeroCarousel from "../HeroCarousel/HeroCarousel";
 import { useMediaQuery } from "@chakra-ui/react";
+import Link from "next/link";
 const spin = keyframes`
  from{
     transform:rotate(0deg)
@@ -72,29 +73,30 @@ export default function HeroSection({ isHomePage }: Props) {
         >
           Try Our new Salad
         </chakra.h4>
-
-        <chakra.button
-          _hover={{ bg: "brand.green.200" }}
-          h="48px"
-          w="150px"
-          bg="black"
-          color="white"
-          borderRadius="30px"
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          p="0px 10px 0px 5px"
-          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-          overflow="hidden"
-        >
-          <Image
-            src="/images/Hero/bowl-icon.png"
-            alt="bowl-icon"
-            width="42px"
-            height="42px"
-          />{" "}
-          Order Now
-        </chakra.button>
+        <Link href="/recipes">
+          <chakra.button
+            _hover={{ bg: "brand.green.200" }}
+            h="48px"
+            w="150px"
+            bg="black"
+            color="white"
+            borderRadius="30px"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            p="0px 10px 0px 5px"
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
+            overflow="hidden"
+          >
+            <Image
+              src="/images/Hero/bowl-icon.png"
+              alt="bowl-icon"
+              width="42px"
+              height="42px"
+            />{" "}
+            Order Now
+          </chakra.button>
+        </Link>
       </Box>
       <chakra.span zIndex="2">
         <Box as="span" zIndex="1" borderRadius="100%">

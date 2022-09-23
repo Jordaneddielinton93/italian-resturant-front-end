@@ -14,7 +14,7 @@ export default function TagBoxs({ tags, borderColor }: Props) {
       pos={"absolute"}
       top="38px"
       left={0}
-      zIndex="2"
+      zIndex="3"
     >
       {tags.map((tag, index) => (
         <Flex
@@ -28,7 +28,7 @@ export default function TagBoxs({ tags, borderColor }: Props) {
           border={`solid thin ${borderColor}`}
           margin="1px 0px"
         >
-          {tag}
+          {tag.split(" ")[0]}
         </Flex>
       ))}
     </Flex>

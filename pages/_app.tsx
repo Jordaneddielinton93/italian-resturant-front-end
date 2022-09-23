@@ -12,7 +12,7 @@ export async function getServerSideProps() {
   return {
     props: {
       recipes,
-    }, // will be passed to the page component as props
+    }, // will be passed to the page component as propss
   };
 }
 
