@@ -39,7 +39,7 @@ export default function MenuItemModel({
   // let state = useSelector((state: any) => state.resturant);
 
   let dispatch = useDispatch();
-  let inputQuantityRef = useRef({ value: "" });
+  let inputQuantityRef = useRef<any>({ value: "" });
   return (
     <>
       <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>
