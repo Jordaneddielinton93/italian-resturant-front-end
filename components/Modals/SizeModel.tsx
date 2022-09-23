@@ -32,7 +32,6 @@ export default function SizeModel({
   onClose,
   cardModalInfo,
 }: SizeModelProp) {
-  console.log(cardModalInfo);
   return (
     <>
       <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>

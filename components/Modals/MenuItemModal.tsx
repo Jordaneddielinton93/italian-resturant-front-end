@@ -37,9 +37,8 @@ export default function MenuItemModel({
   cardModalInfo,
 }: SizeModelProp) {
   // let state = useSelector((state: any) => state.resturant);
-
   let dispatch = useDispatch();
-  let inputQuantityRef = useRef({ value: "" });
+  let inputQuantityRef = useRef<any>({ value: "" });
   return (
     <>
       <Modal onClose={onClose} size={"xl"} isOpen={isOpen}>
@@ -82,14 +81,15 @@ export default function MenuItemModel({
             </chakra.select>
             <Button
               _hover={{ bg: "grey" }}
-              onClick={() =>
+              onClick={() => {
+                onClose();
                 dispatch(
                   addMenuRecipeIdAndAmount({
                     recipeId: cardModalInfo?.recipeid,
                     recipeAmount: Number(inputQuantityRef.current.value),
                   })
-                )
-              }
+                );
+              }}
               w="150px"
               height={"50px"}
               bg="black"
