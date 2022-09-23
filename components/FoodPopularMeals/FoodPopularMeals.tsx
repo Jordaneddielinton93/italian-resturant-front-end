@@ -43,6 +43,7 @@ export default function FoodPopularMeals({}: Props) {
         overflowX={["scroll", "scroll", "initial", "initial"]}
       >
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
           borderColor="#01BC5A"
@@ -50,6 +51,7 @@ export default function FoodPopularMeals({}: Props) {
           price={2}
         />
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={3}
           title="Chicken Roast Beef"
           borderColor="white"
@@ -57,6 +59,7 @@ export default function FoodPopularMeals({}: Props) {
           price={3}
         />
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
           borderColor="#EE3B48"
@@ -64,6 +67,7 @@ export default function FoodPopularMeals({}: Props) {
           price={2}
         />
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={2}
           title="Chicken Roast Beef"
           borderColor="#01BC5A"
@@ -71,6 +75,7 @@ export default function FoodPopularMeals({}: Props) {
           price={3}
         />
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
           borderColor="white"
@@ -78,6 +83,7 @@ export default function FoodPopularMeals({}: Props) {
           price={45}
         />
         <FoodMealsCard
+          handleCardClick={() => ""}
           rating={2}
           title="Chicken Roast Beef"
           borderColor="#EE3B48"
