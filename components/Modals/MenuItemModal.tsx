@@ -82,14 +82,15 @@ export default function MenuItemModel({
             </chakra.select>
             <Button
               _hover={{ bg: "grey" }}
-              onClick={() =>
+              onClick={() => {
+                onClose();
                 dispatch(
                   addMenuRecipeIdAndAmount({
                     recipeId: cardModalInfo?.recipeid,
                     recipeAmount: Number(inputQuantityRef.current.value),
                   })
-                )
-              }
+                );
+              }}
               w="150px"
               height={"50px"}
               bg="black"

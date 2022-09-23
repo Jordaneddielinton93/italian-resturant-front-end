@@ -26,7 +26,7 @@ export default function BookingProcess() {
         "space-between",
       ]}
       alignItems="center"
-      position={isLargerThan480 ? "static" : "absolute"}
+      position={isLargerThan480 ? "static" : "fixed"}
       bottom={0}
       left={0}
       bg="white"

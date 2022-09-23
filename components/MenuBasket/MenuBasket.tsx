@@ -14,7 +14,7 @@ export default function MenuBasket({ recipes }: any) {
   }
   return (
     <Flex
-      h={"212px"}
+      h={["160px", "212px", "212px", "212px"]}
       w="100%"
       bg={"#EDF1F4"}
       border={"solid 1px black"}

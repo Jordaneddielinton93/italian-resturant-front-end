@@ -5,7 +5,13 @@ type Props = {};
 
 export default function MenuFavourites({}: Props) {
   return (
-    <Flex minH={"215px"} w="230px" bg={"black"}>
+    <Flex
+      display={["none", "column", "column", "column"]}
+      justifySelf="flex-start"
+      minH={"215px"}
+      w={["100%", "100%", "230px", "230px"]}
+      bg={"black"}
+    >
       <Heading
         as={"h3"}
         fontSize="20px"

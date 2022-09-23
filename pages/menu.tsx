@@ -36,7 +36,11 @@ export default function Menu({ data }: { data: recipesTypes }) {
         handleClickChooseTag={handleClickChooseTag}
         recipeTag={recipeTag}
       />
-      <Flex borderTop={"solid thin black"} justifyContent="space-between">
+      <Flex
+        borderTop={"solid thin black"}
+        justifyContent="space-between"
+        flexDir={["column-reverse", "column-reverse", "row", "row"]}
+      >
         <MenuCardItems recipes={data} />
         <MenuBasketAndFavourite recipes={data} />
       </Flex>
