@@ -3,6 +3,7 @@ import FoodMealsCard from "../FoodMealsCard/FoodMealsCard";
 
 type Props = {
   handleClick: (recipeId: number) => void;
+  recipeTag: string;
   recipes: Recipes;
 };
 type Recipes = {
@@ -13,7 +14,7 @@ type Recipes = {
   recipeimage: string;
 }[];
 
-function MenuCardList({ recipes, handleClick }: Props) {
+function MenuCardList({ recipes, handleClick, recipeTag }: Props) {
   let counter = 0;
   const checkColorIsItalianColor = () => {
     counter++;
@@ -22,24 +23,24 @@ function MenuCardList({ recipes, handleClick }: Props) {
     if (counter == 2) return "#F2F2F2";
     if (counter == 3) return "#EE3B48";
   };
-
+  console.log(recipeTag + "here");
   return (
     <>
       {recipes
         ? recipes.map(
             ({ recipetitle, tags, recipeid, reciperatings, recipeimage }) => {
               return (
-                <FoodMealsCard
-                  handleCardClick={() => handleClick(recipeid)}
-                  key={recipeid}
-                  image={recipeimage}
-                  rating={reciperatings}
-                  title={recipetitle}
-                  borderColor={checkColorIsItalianColor()}
-                  tags={tags}
-                  // recipeRating={1}
-                  price={2}
-                />
+                (tags.includes(recipeTag) || recipeTag.length == 0) && (
+                  <FoodMealsCard
+                    handleCardClick={() => handleClick(recipeid)}
+                    key={recipeid}
+                    image={recipeimage}
+                    rating={reciperatings}
+                    title={recipetitle}
+                    borderColor={checkColorIsItalianColor()}
+                    tags={tags}
+                  />
+                )
               );
             }
           )

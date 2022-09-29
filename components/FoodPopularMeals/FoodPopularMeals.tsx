@@ -48,7 +48,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="#01BC5A"
           tags={["Meats", "Vegitarian", "Special"]}
-          price={2}
         />
         <FoodMealsCard
           handleCardClick={() => ""}
@@ -56,7 +55,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="white"
           tags={["vegan", "Vegitarian"]}
-          price={3}
         />
         <FoodMealsCard
           handleCardClick={() => ""}
@@ -64,7 +62,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="#EE3B48"
           tags={["Pudding", "Extras"]}
-          price={2}
         />
         <FoodMealsCard
           handleCardClick={() => ""}
@@ -72,7 +69,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="#01BC5A"
           tags={["Meats", "Vegitarian", "Special"]}
-          price={3}
         />
         <FoodMealsCard
           handleCardClick={() => ""}
@@ -80,7 +76,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="white"
           tags={["vegan", "Vegitarian"]}
-          price={45}
         />
         <FoodMealsCard
           handleCardClick={() => ""}
@@ -88,7 +83,6 @@ export default function FoodPopularMeals({}: Props) {
           title="Chicken Roast Beef"
           borderColor="#EE3B48"
           tags={["Pudding", "Extras"]}
-          price={2}
         />
       </Flex>
 
