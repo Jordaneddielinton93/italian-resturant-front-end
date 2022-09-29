@@ -64,7 +64,6 @@ export default function FoodMealsCard({
         w="138px"
         bgColor="#EDF1F4"
         borderRadius={"19px"}
-        boxShadow="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;"
       ></Box>
       <Text
         as="p"

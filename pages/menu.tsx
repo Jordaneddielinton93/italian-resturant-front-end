@@ -2,7 +2,7 @@ import BookingProcess from "@/components/BookingProcess/BookingProcess";
 import CategorieButtons from "@/components/CategorieButtons/CategorieButtons";
 import MenuBasketAndFavourite from "@/components/MenuBasketAndFavourite/MenuBasketAndFavourite";
 import { Box, Flex } from "@chakra-ui/react";
-import MenuCardItems from "MenuCardItems/MenuCardItems";
+import MenuCardItems from "@/components/MenuCardItems/MenuCardItems";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import { server } from "../config/index.js";
