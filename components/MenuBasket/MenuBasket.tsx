@@ -1,21 +1,23 @@
 import { recipesTypes } from "@/pages/recipes";
 import { Flex, chakra, Button, Heading } from "@chakra-ui/react";
 import React from "react";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { changeMenuStage } from "../01-Reducers/resturantSlice";
+import BookingProcessProceedButton from "../Buttons/BookingProcessProceedButton";
 type Props = {};
 
 export default function MenuBasket({ recipes }: any) {
-  let state = useSelector((state: any) => state.resturant);
-  let basketNumbArr = state.menuBasket;
+  let { menuBasket, menuStage } = useSelector((state: any) => state.resturant);
+
   function filterDuplicatesReturnLength(recipeId: number) {
-    return basketNumbArr.filter(
+    return menuBasket.filter(
       (numberInBasketId: number) => numberInBasketId === recipeId
     ).length;
   }
+  // ^^ maps menuBasket and filters all other then recipe id then returns length,
 
   function getPriceBasedOnRatings() {
-    return basketNumbArr
+    return menuBasket
       .map((numb: number) => {
         return recipes.find(
           ({ recipeid }: { recipeid: number }) => recipeid === numb
@@ -23,6 +25,7 @@ export default function MenuBasket({ recipes }: any) {
       })
       .reduce((partialSum: number, a: number) => partialSum + a, 0);
   }
+  // ^^ maps through foodbasket, finds each item by id and returns rating number then sums entire mapped Arr
 
   return (
     <Flex
@@ -44,23 +47,22 @@ export default function MenuBasket({ recipes }: any) {
       >
         Total:£{getPriceBasedOnRatings()}
       </Heading>
-      <Button
-        fontWeight={"normal"}
-        w={["190px", "190px", "95%", "95%"]}
-        h={["43px"]}
-        bg="black"
-        color={"white"}
-      >
-        Proceed to Table
-      </Button>
-      <chakra.ul overflowY={"scroll"} overflowX={"hidden"}>
+
+      <BookingProcessProceedButton />
+
+      <chakra.ul overflowX={"hidden"} w={["190px", "190px", "95%", "95%"]}>
         {recipes &&
           recipes.map(
             ({ recipeid, recipetitle, reciperatings }: any, index: number) => {
               let quantity = filterDuplicatesReturnLength(recipeid);
               return (
-                <chakra.li key={recipeid} fontSize="10px">
-                  {state.menuBasket.includes(recipeid) &&
+                <chakra.li
+                  key={recipeid}
+                  w="200px"
+                  overflow="hidden"
+                  fontSize="10px"
+                >
+                  {menuBasket.includes(recipeid) &&
                     "x" +
                       quantity +
                       " (£" +

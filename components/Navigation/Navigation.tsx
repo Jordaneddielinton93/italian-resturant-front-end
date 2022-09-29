@@ -2,12 +2,9 @@ import { Box, Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import Primary_button from "../Buttons/Primary_button";
-import { FaHamburger } from "react-icons/fa";
-import { HamburgerIcon } from "@chakra-ui/icons";
 import NavMenu from "../Modals/NavMenu";
 
 export default function Navigation({}) {
-  const [isLargerThan500] = useMediaQuery("(min-width: 500px)");
   // const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   function handleClickSignin() {}
