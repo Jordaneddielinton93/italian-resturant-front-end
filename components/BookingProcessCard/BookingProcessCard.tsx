@@ -3,6 +3,8 @@ import React, { ReactElement } from "react";
 import { chakra } from "@chakra-ui/react";
 
 import { Flex } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { changeMenuStage } from "../01-Reducers/resturantSlice";
 
 type CardProps = {
   icon: ReactElement<any, any>;
@@ -15,8 +17,10 @@ export default function BookingProcessCard({
   title,
   isBookingStage,
 }: CardProps) {
+  let dispatch = useDispatch();
   return (
     <Flex
+      onClick={() => title == "Menu" && dispatch(changeMenuStage("Menu"))}
       w={["21vw", "21vw", "21vw", "21vw"]}
       maxW="250px"
       h={["80px", "50px", "50px", "50px"]}
@@ -31,6 +35,7 @@ export default function BookingProcessCard({
       color={"black"}
       flexDirection={["column", "row", "row", "row"]}
       textAlign="center"
+      cursor={title == "Menu" ? "pointer" : ""}
     >
       <chakra.span fontSize={["20px", "12px", "16px", "16px"]}>
         {icon}

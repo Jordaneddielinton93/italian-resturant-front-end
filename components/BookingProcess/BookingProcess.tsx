@@ -9,7 +9,7 @@ export default function BookingProcess() {
   function colorLogic() {
     if (state.menuStage == "Menu") return 0;
     if (state.menuStage == "Basket") return 1;
-    if (state.menuStage == "Book A Seat") return 2;
+    if (state.menuStage == "Seat") return 2;
     if (state.menuStage == "Checkout") return 3;
     return "Menu";
   }
