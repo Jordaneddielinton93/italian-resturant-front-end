@@ -7,7 +7,6 @@ type Props = {
   image?: string;
   title: string;
   rating: number;
-  price: number;
   borderColor?: any;
   tags: string[];
   handleCardClick: () => void;
@@ -17,7 +16,7 @@ export default function FoodMealsCard({
   image,
   title,
   rating,
-  price,
+
   borderColor,
   tags,
   handleCardClick,
@@ -64,6 +63,7 @@ export default function FoodMealsCard({
         w="138px"
         bgColor="#EDF1F4"
         borderRadius={"19px"}
+        boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px"}
       ></Box>
       <Text
         as="p"
@@ -84,7 +84,7 @@ export default function FoodMealsCard({
         bottom={"8px"}
         right="-70px"
       >
-        £{price}
+        £{rating}
       </Text>
     </Flex>
   );

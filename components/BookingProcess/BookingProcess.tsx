@@ -40,7 +40,6 @@ export default function BookingProcess() {
             icon={icon}
             title={title}
             isBookingStage={index <= newcolorLogic}
-            hasAnimation={index == newcolorLogic}
             //  if you are at that menu stage or below return true else false
           />
         );

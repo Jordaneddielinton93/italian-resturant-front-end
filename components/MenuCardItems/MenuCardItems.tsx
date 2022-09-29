@@ -6,12 +6,17 @@ import { Flex, useDisclosure } from "@chakra-ui/react";
 import React, { useCallback, useState } from "react";
 import MenuCardList from "../MenuCardList/MenuCardList";
 
-export default function MenuCardItems({ recipes }: { recipes: recipesTypes }) {
+export default function MenuCardItems({
+  recipes,
+  recipeTag,
+}: {
+  recipes: recipesTypes;
+  recipeTag: string;
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   // ^^ handles what modal card info is shown ,inistial default set to random card
   let [cardModalInfo, setCardModalInfo] = useState(getSpecificCard(recipes, 0));
-
   // ^^ handles what modal card info is shown ,inistial default set to random card
   let handleClick = useCallback((recipeId: any) => {
     setCardModalInfo(getSpecificCard(recipes, recipeId));
@@ -27,7 +32,11 @@ export default function MenuCardItems({ recipes }: { recipes: recipesTypes }) {
       overflow={"scroll"}
       justifyContent="space-evenly"
     >
-      <MenuCardList recipes={recipes} handleClick={handleClick} />
+      <MenuCardList
+        recipeTag={recipeTag}
+        recipes={recipes}
+        handleClick={handleClick}
+      />
       <MenuItemModel
         isOpen={isOpen}
         onClose={onClose}

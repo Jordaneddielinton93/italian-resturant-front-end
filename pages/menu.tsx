@@ -41,7 +41,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
         justifyContent="space-between"
         flexDir={["column-reverse", "column-reverse", "row", "row"]}
       >
-        <MenuCardItems recipes={data} />
+        <MenuCardItems recipes={data} recipeTag={recipeTag} />
         <MenuBasketAndFavourite recipes={data} />
       </Flex>
     </Box>
