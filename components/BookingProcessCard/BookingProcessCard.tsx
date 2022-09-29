@@ -44,8 +44,7 @@ export default function BookingProcessCard({
       bg={isBookingStage ? "brand.green.100" : "brand.grey.100"}
       border={`solid 1px ${isBookingStage ? "#008000" : "#EF3A48"}`}
       borderRadius="3px"
-      animation={hasAnimation ? animation : ""}
-      color={hasAnimation ? "white" : "black"}
+      color={"black"}
       flexDirection={["column", "row", "row", "row"]}
       textAlign="center"
     >
