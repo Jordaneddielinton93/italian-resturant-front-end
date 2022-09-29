@@ -9,7 +9,7 @@ type Props = {};
 export default function MenuBasketAndFavourite({ recipes }: any) {
   return (
     <Flex
-      width={["90%", "90%", "230px", "230px"]}
+      width={["250px", "450px", "230px", "230px"]}
       flexDir="column"
       alignSelf={"center"}
     >

@@ -7,6 +7,7 @@ import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import { server } from "../config/index.js";
 import { recipesTypes } from "./recipes.jsx";
+import { useSelector } from "react-redux";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
@@ -19,6 +20,8 @@ export async function getServerSideProps() {
 }
 
 export default function Menu({ data }: { data: recipesTypes }) {
+  let { menuStage } = useSelector((state: any) => state.resturant);
+
   let [recipeTag, setRecipeTag] = useState("");
   let handleClickChooseTag = useCallback(
     (tag: string) => setRecipeTag(tag),
@@ -41,7 +44,12 @@ export default function Menu({ data }: { data: recipesTypes }) {
         justifyContent="space-between"
         flexDir={["column-reverse", "column-reverse", "row", "row"]}
       >
-        <MenuCardItems recipes={data} recipeTag={recipeTag} />
+        {menuStage == "Menu" && (
+          <MenuCardItems recipes={data} recipeTag={recipeTag} />
+        )}
+        {menuStage == "Basket" && "nothing"}
+        {menuStage == "Seat" && "nothing"}
+        {menuStage == "Checkout" && "nothing"}
         <MenuBasketAndFavourite recipes={data} />
       </Flex>
     </Box>
