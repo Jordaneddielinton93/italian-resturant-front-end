@@ -30,7 +30,6 @@ export default function RecipeCard({
   handleClick,
 }: Props) {
   let state = useSelector((state: any) => state.resturant);
-  console.log(recipeId);
   return (
     <Flex
       onClick={handleClick}

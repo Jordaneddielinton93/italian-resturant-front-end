@@ -26,23 +26,21 @@ function MenuCardList({ recipes, handleClick, recipeTag }: Props) {
   return (
     <>
       {recipes
-        ? recipes.map(
-            ({ recipetitle, tags, recipeid, reciperatings, recipeimage }) => {
-              return (
-                (tags.includes(recipeTag) || recipeTag.length == 0) && (
-                  <FoodMealsCard
-                    handleCardClick={() => handleClick(recipeid)}
-                    key={recipeid}
-                    image={recipeid}
-                    rating={reciperatings}
-                    title={recipetitle}
-                    borderColor={checkColorIsItalianColor()}
-                    tags={tags}
-                  />
-                )
-              );
-            }
-          )
+        ? recipes.map(({ recipetitle, tags, recipeid, reciperatings }) => {
+            return (
+              (tags.includes(recipeTag) || recipeTag.length == 0) && (
+                <FoodMealsCard
+                  handleCardClick={() => handleClick(recipeid)}
+                  key={recipeid}
+                  image={recipeid}
+                  rating={reciperatings}
+                  title={recipetitle}
+                  borderColor={checkColorIsItalianColor()}
+                  tags={tags}
+                />
+              )
+            );
+          })
         : ""}
     </>
   );
