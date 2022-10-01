@@ -8,32 +8,23 @@ export default function BookingProcessProceedButton() {
   let dispatch = useDispatch();
   let hasItemsInBasket = menuBasket.length;
   return (
-    <Button
-      onClick={() =>
-        menuBasket.length &&
-        dispatch(
-          changeMenuStage(
-            menuStage == "Menu"
-              ? "Basket"
-              : menuStage === "Basket"
-              ? "Seat"
-              : "Checkout"
-          )
-        )
-      }
-      fontWeight={"normal"}
-      w={["190px", "190px", "95%", "95%"]}
-      h={["43px"]}
-      bg={hasItemsInBasket ? "black" : "gray"}
-      color={"white"}
-      cursor={hasItemsInBasket ? "pointer" : "not-allowed"}
-    >
-      Proceed to{" "}
-      {menuStage == "Menu"
-        ? "Basket"
-        : menuStage === "Basket"
-        ? "Seat"
-        : "Checkout"}
-    </Button>
+    <>
+      <Button
+        mt={"5px"}
+        onClick={() =>
+          menuBasket.length &&
+          dispatch(changeMenuStage(menuStage == "Menu" ? "Seat" : "Checkout"))
+        }
+        fontWeight={"normal"}
+        w={["190px", "190px", "95%", "95%"]}
+        h={"43px"}
+        minH={"43px"}
+        bg={hasItemsInBasket ? "black" : "gray"}
+        color={"white"}
+        cursor={hasItemsInBasket ? "pointer" : "not-allowed"}
+      >
+        Proceed to {menuStage == "Menu" ? "Seat" : "Checkout"}
+      </Button>
+    </>
   );
 }
