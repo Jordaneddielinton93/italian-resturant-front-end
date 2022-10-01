@@ -35,10 +35,9 @@ function RecipeCards(recipes: { recipes: recipesTypes; recipeTag: string }) {
             recipeid,
             recipetitle,
             recipediscription,
-            recipeimage,
-            recipeingridients,
+
             recipecooktime,
-            recipehowto,
+
             reciperatings,
             tags,
           }) => {
@@ -48,7 +47,7 @@ function RecipeCards(recipes: { recipes: recipesTypes; recipeTag: string }) {
                   key={recipeid}
                   recipeId={recipeid}
                   handleClick={() => handleClick(recipeid)}
-                  Img={recipeimage}
+                  Img={recipeid}
                   Alt={recipetitle}
                   Title={recipetitle}
                   Discription={recipediscription}
