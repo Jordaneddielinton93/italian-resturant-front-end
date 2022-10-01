@@ -1,16 +1,23 @@
-import { Flex, Heading } from "@chakra-ui/react";
-import React from "react";
+import { recipesTypes } from "@/pages/recipes";
+import { Flex, Heading, chakra, Image } from "@chakra-ui/react";
+import React, { memo } from "react";
+import { useSelector } from "react-redux";
+import RecipeCard from "../RecipeCards/RecipeCard";
 
 type Props = {};
-
-export default function MenuFavourites({}: Props) {
+// recipesTypes
+function MenuFavourites({ recipes }: any) {
+  let { likeBasket } = useSelector((state: any) => state.resturant);
   return (
     <Flex
-      display={["none", "column", "column", "column"]}
+      flexDir={"column"}
       justifySelf="flex-start"
       minH={"215px"}
       w={["100%", "100%", "230px", "230px"]}
-      bg={"black"}
+      bg={"#353643"}
+      zIndex="10"
+      p={"5px 0"}
+      overflowY="scroll"
     >
       <Heading
         as={"h3"}
@@ -22,6 +29,42 @@ export default function MenuFavourites({}: Props) {
       >
         YourFavourites
       </Heading>
+      <chakra.ul
+        display={"flex"}
+        flexDir="column"
+        alignItems={"center"}
+        gap="10px 0px"
+      >
+        {recipes &&
+          recipes.map(
+            ({
+              recipeid,
+              recipeimage,
+              recipetitle,
+              recipediscription,
+              recipecooktime,
+              reciperatings,
+            }: any) => {
+              console.log(likeBasket);
+              return likeBasket.includes(recipeid) ? (
+                <RecipeCard
+                  key={recipeid}
+                  recipeId={recipeid}
+                  Img={recipeimage}
+                  Alt={recipetitle}
+                  Title={recipetitle}
+                  Discription={recipediscription}
+                  Timer={recipecooktime}
+                  Rating={reciperatings}
+                  handleClick={() => ""}
+                />
+              ) : (
+                ""
+              );
+            }
+          )}
+      </chakra.ul>
     </Flex>
   );
 }
+export default memo(MenuFavourites);

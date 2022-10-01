@@ -31,6 +31,7 @@ export default function MenuCardItems({
       maxH="640px"
       overflow={"scroll"}
       justifyContent="space-evenly"
+      flex={1}
     >
       <MenuCardList
         recipeTag={recipeTag}

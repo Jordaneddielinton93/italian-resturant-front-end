@@ -9,12 +9,14 @@ type Props = {};
 export default function MenuBasketAndFavourite({ recipes }: any) {
   return (
     <Flex
-      width={["250px", "450px", "230px", "230px"]}
+      w={["250px", "450px", "230px", "230px"]}
+      minW={["250px", "450px", "230px", "230px"]}
+      maxH="640px"
       flexDir="column"
-      alignSelf={"center"}
+      alignSelf={"flex-start"}
     >
       <MenuBasket recipes={recipes} />
-      <MenuFavourites />
+      <MenuFavourites recipes={recipes} />
     </Flex>
   );
 }
