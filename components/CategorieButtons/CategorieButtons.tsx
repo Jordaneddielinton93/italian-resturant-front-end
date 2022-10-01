@@ -78,4 +78,4 @@ function CategorieButtons({
     </Flex>
   );
 }
-export default memo(CategorieButtons);
+export default CategorieButtons;

@@ -10,6 +10,7 @@ function MenuFavourites({ recipes }: any) {
   let { likeBasket } = useSelector((state: any) => state.resturant);
   return (
     <Flex
+      display={["none", "none", "flex", "flex"]}
       flexDir={"column"}
       justifySelf="flex-start"
       minH={"215px"}

@@ -14,6 +14,7 @@ export default function MenuBasketAndFavourite({ recipes }: any) {
       maxH="640px"
       flexDir="column"
       alignSelf={"flex-start"}
+      m="auto"
     >
       <MenuBasket recipes={recipes} />
       <MenuFavourites recipes={recipes} />
