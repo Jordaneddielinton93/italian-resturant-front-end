@@ -50,6 +50,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
         {menuStage == "Basket" && "nothing"}
         {menuStage == "Seat" && "nothing"}
         {menuStage == "Checkout" && "nothing"}
+
         <MenuBasketAndFavourite recipes={data} />
       </Flex>
     </Box>
