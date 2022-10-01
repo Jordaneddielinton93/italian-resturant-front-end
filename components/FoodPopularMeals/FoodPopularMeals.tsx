@@ -43,6 +43,7 @@ export default function FoodPopularMeals({}: Props) {
         overflowX={["scroll", "scroll", "initial", "initial"]}
       >
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
@@ -50,6 +51,7 @@ export default function FoodPopularMeals({}: Props) {
           tags={["Meats", "Vegitarian", "Special"]}
         />
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={3}
           title="Chicken Roast Beef"
@@ -57,6 +59,7 @@ export default function FoodPopularMeals({}: Props) {
           tags={["vegan", "Vegitarian"]}
         />
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
@@ -64,6 +67,7 @@ export default function FoodPopularMeals({}: Props) {
           tags={["Pudding", "Extras"]}
         />
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={2}
           title="Chicken Roast Beef"
@@ -71,6 +75,7 @@ export default function FoodPopularMeals({}: Props) {
           tags={["Meats", "Vegitarian", "Special"]}
         />
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={4}
           title="Chicken Roast Beef"
@@ -78,6 +83,7 @@ export default function FoodPopularMeals({}: Props) {
           tags={["vegan", "Vegitarian"]}
         />
         <FoodMealsCard
+          image={1}
           handleCardClick={() => ""}
           rating={2}
           title="Chicken Roast Beef"
