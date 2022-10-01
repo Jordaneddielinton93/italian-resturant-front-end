@@ -35,32 +35,33 @@ function MenuFavourites({ recipes }: any) {
         alignItems={"center"}
         gap="10px 0px"
       >
-        {recipes &&
-          recipes.map(
-            ({
-              recipeid,
-              recipetitle,
-              recipediscription,
-              recipecooktime,
-              reciperatings,
-            }: any) => {
-              return likeBasket.includes(recipeid) ? (
-                <RecipeCard
-                  key={recipeid}
-                  recipeId={recipeid}
-                  Img={recipeid}
-                  Alt={recipetitle}
-                  Title={recipetitle}
-                  Discription={recipediscription}
-                  Timer={recipecooktime}
-                  Rating={reciperatings}
-                  handleClick={() => ""}
-                />
-              ) : (
-                ""
-              );
-            }
-          )}
+        {recipes
+          ? recipes.map(
+              ({
+                recipeid,
+                recipetitle,
+                recipediscription,
+                recipecooktime,
+                reciperatings,
+              }: any) => {
+                return likeBasket.includes(recipeid) ? (
+                  <RecipeCard
+                    key={recipeid}
+                    recipeId={recipeid}
+                    Img={recipeid}
+                    Alt={recipetitle}
+                    Title={recipetitle}
+                    Discription={recipediscription}
+                    Timer={recipecooktime}
+                    Rating={reciperatings}
+                    handleClick={() => ""}
+                  />
+                ) : (
+                  ""
+                );
+              }
+            )
+          : ""}
       </chakra.ul>
     </Flex>
   );

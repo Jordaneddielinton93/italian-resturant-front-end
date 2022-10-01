@@ -23,7 +23,6 @@ function MenuCardList({ recipes, handleClick, recipeTag }: Props) {
     if (counter == 2) return "#F2F2F2";
     if (counter == 3) return "#EE3B48";
   };
-  console.log(recipeTag + "here");
   return (
     <>
       {recipes
