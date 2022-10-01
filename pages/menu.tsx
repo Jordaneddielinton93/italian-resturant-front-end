@@ -9,6 +9,7 @@ import { server } from "../config/index.js";
 import { recipesTypes } from "./recipes.jsx";
 import { useSelector } from "react-redux";
 import HeroImageBasket from "../components/HeroImageBasket/HeroImageBasket";
+import MenuSeatsPicker from "../components/MenuSeatsPicker/MenuSeatsPicker";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
@@ -32,9 +33,10 @@ export default function Menu({ data }: { data: recipesTypes }) {
         <title>Bowles - Menu </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeroImageBasket />
+      <HeroImageBasket showBasket={false} />
 
       {/* <BookingProcess menuStage={menuStage} /> */}
+
       <CategorieButtons
         handleClickChooseTag={handleClickChooseTag}
         recipeTag={recipeTag}
@@ -47,8 +49,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
         {menuStage == "Menu" && (
           <MenuCardItems recipes={data} recipeTag={recipeTag} />
         )}
-        {menuStage == "Basket" && "nothing"}
-        {menuStage == "Seat" && "nothing"}
+        {menuStage == "Seat" && <MenuSeatsPicker />}
         {menuStage == "Checkout" && "nothing"}
 
         <MenuBasketAndFavourite recipes={data} />

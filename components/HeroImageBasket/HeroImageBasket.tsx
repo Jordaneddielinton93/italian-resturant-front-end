@@ -5,14 +5,16 @@ import { BsBasket } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { AiFillStar } from "react-icons/ai";
 
-type Props = {};
+type Props = {
+  showBasket: boolean;
+};
 
-export default function HeroImageBasket({}: Props) {
+export default function HeroImageBasket({ showBasket }: Props) {
   let state = useSelector((state: any) => state.resturant);
   return (
     <Flex
       h={["210px", "190px", "190px", "190px"]}
-      w="95%"
+      w={showBasket ? "95%" : "100%"}
       margin={"0 auto"}
       justifyContent="space-between"
       flexDir={["column", "row", "row", "row"]}
@@ -50,6 +52,7 @@ export default function HeroImageBasket({}: Props) {
         </Flex>
       </Flex>
       <Flex
+        display={showBasket ? "flex" : "none"}
         bg={"#353643"}
         w={["100%", "160px", "160px", "160px"]}
         h={["48%", "100%", "100%", "100%"]}

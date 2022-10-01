@@ -6,12 +6,14 @@ type IinitialState = {
   }[];
   menuBasket: number[];
   menuStage: string;
+  seats: number[][];
 };
 
 let initialState: IinitialState = {
   likeBasket: [],
   menuBasket: [],
   menuStage: "Menu",
+  seats: [],
 };
 
 const counterSlice = createSlice({
@@ -44,6 +46,9 @@ const counterSlice = createSlice({
           .map(() => payload.recipeId),
       ];
     },
+    addNumberOfSeatsToPricing(state, { payload }) {
+      state.seats = payload;
+    },
     // ------------------Menu's  page ^^------------------------
 
     clearFavRecipeBasket: (state) => {
@@ -60,5 +65,6 @@ export const {
   clearFavRecipeBasket,
   addInistialRecipeFavouriteBasket,
   addMenuRecipeIdAndAmount,
+  addNumberOfSeatsToPricing,
 } = counterSlice.actions;
 export default counterSlice.reducer;

@@ -42,7 +42,7 @@ export default function recipes({ data }: { data: recipesTypes }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeroImageBasket />
+      <HeroImageBasket showBasket={true} />
       <CategorieButtons
         recipeTag={recipeTag}
         handleClickChooseTag={handleClickChooseTag}

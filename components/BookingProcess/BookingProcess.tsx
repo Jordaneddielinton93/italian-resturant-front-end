@@ -25,9 +25,9 @@ export default function BookingProcess({ menuStage }: { menuStage: string }) {
         "space-between",
       ]}
       alignItems="center"
-      position={["fixed", "fixed", "static", "static"]}
-      bottom={0}
-      left={0}
+      // position={["fixed", "fixed", "static", "static"]}
+      // bottom={0}
+      // left={0}
       bg="white"
       zIndex={"3"}
     >

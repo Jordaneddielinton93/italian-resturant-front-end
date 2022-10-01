@@ -3,11 +3,12 @@ import { Flex, chakra, Button, Heading } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeMenuStage } from "../01-Reducers/resturantSlice";
+import BookingProcessPrevButton from "../Buttons/BookingProcessPrevButton";
 import BookingProcessProceedButton from "../Buttons/BookingProcessProceedButton";
 type Props = {};
 
 export default function MenuBasket({ recipes }: any) {
-  let { menuBasket, menuStage } = useSelector((state: any) => state.resturant);
+  let { menuBasket, seats } = useSelector((state: any) => state.resturant);
 
   function filterDuplicatesReturnLength(recipeId: number) {
     return menuBasket.filter(
@@ -26,7 +27,13 @@ export default function MenuBasket({ recipes }: any) {
       .reduce((partialSum: number, a: number) => partialSum + a, 0);
   }
   // ^^ maps through foodbasket, finds each item by id and returns rating number then sums entire mapped Arr
-
+  function amountOfSeatsPerTable() {
+    return seats
+      .map((arr: number[]) => {
+        return arr.length;
+      })
+      .reduce((partialSum: any, a: any) => partialSum + a, 0);
+  }
   return (
     <Flex
       h={["160px", "212px", "212px", "212px"]}
@@ -38,6 +45,8 @@ export default function MenuBasket({ recipes }: any) {
       flexDir={"column"}
       alignItems="center"
     >
+      <BookingProcessProceedButton />
+      <BookingProcessPrevButton />
       <Heading
         as={"h4"}
         fontSize="16px"
@@ -46,10 +55,8 @@ export default function MenuBasket({ recipes }: any) {
         p="10px"
         textAlign={"center"}
       >
-        Total:£{getPriceBasedOnRatings()}
+        Total:£{getPriceBasedOnRatings() + amountOfSeatsPerTable()}
       </Heading>
-
-      <BookingProcessProceedButton />
 
       <chakra.ul overflowX={"hidden"} w={["190px", "190px", "95%", "95%"]}>
         {recipes &&
@@ -74,6 +81,15 @@ export default function MenuBasket({ recipes }: any) {
               );
             }
           )}
+        {seats
+          .filter((arr: number[]) => arr.length)
+          .map((arr: number[], index: number) => {
+            return (
+              <chakra.li>
+                {"x" + arr.length + " - Seats at Table " + (index + 1)}
+              </chakra.li>
+            );
+          })}
       </chakra.ul>
     </Flex>
   );
