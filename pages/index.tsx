@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import styles from "@/pages/index.module.css";
+import styles from "../styles/index.module.css";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FoodSelection from "@/components/FoodSelection/FoodSelection";
 import FoodPopularity from "@/components/FoodPopularity/FoodPopularity";
