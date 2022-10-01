@@ -4,13 +4,12 @@ import { useSelector } from "react-redux";
 import BookingProcessCard from "../BookingProcessCard/BookingProcessCard";
 import { BookingProcessArr } from "../constants/constants";
 
-export default function BookingProcess() {
-  let state = useSelector((state: any) => state.resturant);
+export default function BookingProcess({ menuStage }: { menuStage: string }) {
   function colorLogic() {
-    if (state.menuStage == "Menu") return 0;
-    if (state.menuStage == "Basket") return 1;
-    if (state.menuStage == "Seat") return 2;
-    if (state.menuStage == "Checkout") return 3;
+    if (menuStage == "Menu") return 0;
+    if (menuStage == "Basket") return 1;
+    if (menuStage == "Seat") return 2;
+    if (menuStage == "Checkout") return 3;
     return "Menu";
   }
 
@@ -33,13 +32,13 @@ export default function BookingProcess() {
       zIndex={"3"}
     >
       {BookingProcessArr.map(({ icon, title }, index) => {
-        let newcolorLogic = colorLogic();
+        // let newcolorLogic = colorLogic();
         return (
           <BookingProcessCard
             key={title}
             icon={icon}
             title={title}
-            isBookingStage={index <= newcolorLogic}
+            isBookingStage={index <= colorLogic()}
             //  if you are at that menu stage or below return true else false
           />
         );
