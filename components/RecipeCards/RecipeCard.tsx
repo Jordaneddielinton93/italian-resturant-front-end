@@ -9,7 +9,7 @@ import style from "./RecipeCard.module.css";
 
 type Props = {
   recipeId: number;
-  Img: string;
+  Img: number;
   Alt: string;
   Title: string;
   Discription: string;
@@ -30,7 +30,7 @@ export default function RecipeCard({
   handleClick,
 }: Props) {
   let state = useSelector((state: any) => state.resturant);
-  console.log(Img, Alt, Title, Discription, Timer, Rating, recipeId);
+  console.log(recipeId);
   return (
     <Flex
       onClick={handleClick}
@@ -67,8 +67,8 @@ export default function RecipeCard({
         <Image
           className={style.image}
           src={
-            Img
-              ? Img
+            Img < 11
+              ? `/images/Recipes/recipie-id-${Img}.png`
               : "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2R8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
           }
           alt={Alt}

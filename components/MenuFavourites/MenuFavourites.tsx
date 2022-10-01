@@ -39,18 +39,16 @@ function MenuFavourites({ recipes }: any) {
           recipes.map(
             ({
               recipeid,
-              recipeimage,
               recipetitle,
               recipediscription,
               recipecooktime,
               reciperatings,
             }: any) => {
-              console.log(likeBasket);
               return likeBasket.includes(recipeid) ? (
                 <RecipeCard
                   key={recipeid}
                   recipeId={recipeid}
-                  Img={recipeimage}
+                  Img={recipeid}
                   Alt={recipetitle}
                   Title={recipetitle}
                   Discription={recipediscription}

@@ -34,7 +34,7 @@ function MenuCardList({ recipes, handleClick, recipeTag }: Props) {
                   <FoodMealsCard
                     handleCardClick={() => handleClick(recipeid)}
                     key={recipeid}
-                    image={recipeimage}
+                    image={recipeid}
                     rating={reciperatings}
                     title={recipetitle}
                     borderColor={checkColorIsItalianColor()}
