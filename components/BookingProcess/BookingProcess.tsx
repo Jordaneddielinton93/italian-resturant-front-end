@@ -1,18 +1,18 @@
 import { Flex } from "@chakra-ui/react";
-import React from "react";
-import { useSelector } from "react-redux";
 import BookingProcessCard from "../BookingProcessCard/BookingProcessCard";
 import { BookingProcessArr } from "../constants/constants";
 
 export default function BookingProcess({ menuStage }: { menuStage: string }) {
   function colorLogic() {
-    if (menuStage == "Menu") return 0;
-    if (menuStage == "Basket") return 1;
-    if (menuStage == "Seat") return 2;
-    if (menuStage == "Checkout") return 3;
-    return "Menu";
+    return menuStage == "Menu"
+      ? 0
+      : menuStage == "Basket"
+      ? 1
+      : menuStage == "Seat"
+      ? 2
+      : 3;
   }
-
+  let newcolorLogic = colorLogic();
   return (
     <Flex
       h={["100px", "100px", "60px", "60px"]}
@@ -32,13 +32,12 @@ export default function BookingProcess({ menuStage }: { menuStage: string }) {
       zIndex={"3"}
     >
       {BookingProcessArr.map(({ icon, title }, index) => {
-        // let newcolorLogic = colorLogic();
         return (
           <BookingProcessCard
             key={title}
             icon={icon}
             title={title}
-            isBookingStage={index <= colorLogic()}
+            isBookingStage={index <= newcolorLogic}
             //  if you are at that menu stage or below return true else false
           />
         );

@@ -8,6 +8,7 @@ import React, { useCallback, useState } from "react";
 import { server } from "../config/index.js";
 import { recipesTypes } from "./recipes.jsx";
 import { useSelector } from "react-redux";
+import HeroImageBasket from "../components/HeroImageBasket/HeroImageBasket";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
@@ -23,10 +24,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
   let { menuStage } = useSelector((state: any) => state.resturant);
 
   let [recipeTag, setRecipeTag] = useState("");
-  let handleClickChooseTag = useCallback(
-    (tag: string) => setRecipeTag(tag),
-    []
-  );
+  let handleClickChooseTag = (tag: string) => setRecipeTag(tag);
 
   return (
     <Box padding={"0 20px"}>
@@ -34,6 +32,8 @@ export default function Menu({ data }: { data: recipesTypes }) {
         <title>Bowles - Menu </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <HeroImageBasket />
+
       {/* <BookingProcess menuStage={menuStage} /> */}
       <CategorieButtons
         handleClickChooseTag={handleClickChooseTag}

@@ -57,7 +57,7 @@ export default function Navigation({}) {
       >
         <NavMenu />
 
-        <Primary_button title={"Sign in"} handleClick={handleClickSignin} />
+        {/* <Primary_button title={"Sign in"} handleClick={handleClickSignin} /> */}
       </Flex>
     </Box>
   );
