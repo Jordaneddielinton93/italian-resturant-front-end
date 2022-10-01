@@ -4,7 +4,10 @@ export default async function cookingrecipes(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  let data = await query(`SELECT * FROM recipes`);
-  res.json(data.rows);
-  console.log(data);
+  try {
+    let data = await query(`SELECT * FROM recipes`);
+    res.json(data.rows);
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
 }
