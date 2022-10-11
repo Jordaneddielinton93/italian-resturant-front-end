@@ -10,6 +10,7 @@ export default function BookingProcessProceedButton() {
   return (
     <>
       <Button
+        display={menuStage != "Checkout" ? "inline" : "none"}
         mt={"5px"}
         onClick={() =>
           menuBasket.length &&

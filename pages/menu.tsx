@@ -10,6 +10,7 @@ import { recipesTypes } from "./recipes.jsx";
 import { useSelector } from "react-redux";
 import HeroImageBasket from "../components/HeroImageBasket/HeroImageBasket";
 import MenuSeatsPicker from "../components/MenuSeatsPicker/MenuSeatsPicker";
+import CreditCard from "../components/CreditCard/CreditCard";
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}/api/cookingrecipes`);
@@ -50,7 +51,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
           <MenuCardItems recipes={data} recipeTag={recipeTag} />
         )}
         {menuStage == "Seat" && <MenuSeatsPicker />}
-        {menuStage == "Checkout" && "nothing"}
+        {menuStage == "Checkout" && <CreditCard />}
 
         <MenuBasketAndFavourite recipes={data} />
       </Flex>
