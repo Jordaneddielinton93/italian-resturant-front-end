@@ -33,18 +33,21 @@ export default function FoodSelectionSection({
         title={greenTitle}
         bgGradient={`linear(to-l, brand.green.200,brand.green.100)`}
         iconColor="black"
+        pageSelector={flip}
       />
       <FoodSelectionButton
         borderRadius={flip ? "0px 6px 6px 0px" : "6px 0px 0px 6px"}
         title={whiteTitle}
         bgGradient={`linear(to-l, #F1F1F1,white)`}
         iconColor="black"
+        pageSelector={flip}
       />
       <FoodSelectionButton
         borderRadius={flip ? "0px 0px 20px 0px" : "0px 0px 0px 20px"}
         title={redTitle}
         bgGradient={`linear(to-l, brand.red.200, brand.red.100)`}
         iconColor="white"
+        pageSelector={flip}
       />
     </chakra.section>
   );

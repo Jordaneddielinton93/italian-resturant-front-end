@@ -27,4 +27,7 @@ pnpm create next-app --example with-jest with-jest-app --ts
 ```bash
 npm test
 ```
+
 # italian-resturant-front-end
+
+npm i react-credit-card
