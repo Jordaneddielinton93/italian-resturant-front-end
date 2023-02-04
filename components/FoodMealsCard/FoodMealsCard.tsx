@@ -39,11 +39,11 @@ export default function FoodMealsCard({
         top="0"
         h="153px"
         w={"153px"}
-        border={`solid 11px ${borderColor}`}
+        border={`outset 5px ${borderColor}`}
         borderRadius={"100%"}
         background="white"
         zIndex={1}
-        boxShadow="rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+        boxShadow="rgba(0, 0, 0, 0.4) 0px 4px 12px;"
         backgroundImage={
           image < 11
             ? `/images/Recipes/recipie-id-${image}.png`

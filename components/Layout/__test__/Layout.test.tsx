@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { Provider, useDispatch } from "react-redux";
+import { store } from "../../02-store/store";
 import Layout from "../Layout";
 
 Object.defineProperty(window, "matchMedia", {
@@ -17,17 +19,29 @@ Object.defineProperty(window, "matchMedia", {
 
 describe("Should render 3 components the main Layout , navbar and a footer", () => {
   it("should render a layout component", () => {
-    render(<Layout>[]</Layout>);
+    render(
+      <Provider store={store}>
+        <Layout>[]</Layout>
+      </Provider>
+    );
     let LayoutDiv = screen.getByTestId("Layout");
     expect(LayoutDiv).toBeInTheDocument();
   });
   it("should render a layout component with a Navbar inside of it", () => {
-    render(<Layout>[]</Layout>);
+    render(
+      <Provider store={store}>
+        <Layout>[]</Layout>
+      </Provider>
+    );
     let NavBar = screen.getByRole("navigation");
     expect(NavBar).toBeInTheDocument();
   });
   it("should render a layout component with a Footer inside of it", () => {
-    render(<Layout>[]</Layout>);
+    render(
+      <Provider store={store}>
+        <Layout>[]</Layout>
+      </Provider>
+    );
     let Footer = screen.getByTestId("Footer");
 
     expect(Footer).toBeInTheDocument();

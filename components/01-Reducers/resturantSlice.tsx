@@ -9,14 +9,14 @@ type IinitialState = {
   seats: number[][];
 };
 
-let initialState: IinitialState = {
+export let initialState: IinitialState = {
   likeBasket: [],
   menuBasket: [],
   menuStage: "Menu",
   seats: [],
 };
 
-const counterSlice = createSlice({
+export const counterSlice = createSlice({
   name: "LikedFoodsReducer",
   initialState,
   reducers: {
@@ -28,7 +28,10 @@ const counterSlice = createSlice({
     },
     removeFavRecipeFromBasket(state, { payload }) {
       state.likeBasket = [
-        ...state.likeBasket.filter((likeditem) => likeditem !== payload),
+        ...state.likeBasket.filter((likeditem) => {
+          console.log(likeditem, "here", payload);
+          return likeditem !== payload;
+        }),
       ];
     },
     // ------------------Recipes page ^^------------------------

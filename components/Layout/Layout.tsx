@@ -13,7 +13,6 @@ export default function Layout({ children }: Props) {
   let { likeBasket } = useGetLocalStorageLikeBasket();
   let dispatch = useDispatch();
   useEffect(() => {
-    console.log(likeBasket);
     dispatch(addInistialRecipeFavouriteBasket(likeBasket));
   }, [likeBasket]);
   const [isLargerThan390] = useMediaQuery("(min-width: 500px)");
