@@ -42,12 +42,13 @@ export default function HeroCarousel({ isHeroSection }: Props) {
       sx={{
         backgroundImage:
           isLargerThan390px &&
-          "linear-gradient(-43deg, #E33845  50%, #04EF74 50%)",
+          "linear-gradient(-43deg, #E33845  30%, #04EF74 60%)",
+        zIndex: 2,
       }}
       m={"0px 20px 0 0"}
       pos="absolute"
-      bottom={isHeroSection ? "0" : "static"}
-      zIndex="2"
+      bottom={isHeroSection ? "10" : "static"}
+      zIndex="30"
       overflow={"visible"}
       borderRadius={isLargerThan390px ? "20px" : "none"}
     >
@@ -61,6 +62,10 @@ export default function HeroCarousel({ isHeroSection }: Props) {
             ? `linear(to-l, ${"#353643"}, ${"#161A1B"})`
             : "transparent"
         }
+        sx={{
+          backgroundImage: 'url("/images/Hero/graniteBgHoz.png")',
+          backgroundSize: "cover",
+        }}
         // border={isLargerThan390px ? "solid thick" : "none"}
         // borderColor={"brand.green.100"}
         borderRadius={isLargerThan390px ? "20px" : "none"}

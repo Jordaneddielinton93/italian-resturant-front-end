@@ -1,9 +1,9 @@
 import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-type Props = {};
+type Props = { numb: number };
 
-export default function FoodPopularityCard({}: Props) {
+export default function FoodPopularityCard({ numb }: Props) {
   return (
     <Flex
       h="280px"
@@ -13,11 +13,7 @@ export default function FoodPopularityCard({}: Props) {
       justifyContent={"space-evenly"}
       zIndex="1"
     >
-      <Image
-        src="/images/FoodSelection/woodenboard.png"
-        h={"160px"}
-        w="160px"
-      />
+      <Image src={`/images/Hero/bowl-icon${numb}.png`} h={"160px"} w="160px" />
       <Heading
         as="h3"
         w={"205px"}

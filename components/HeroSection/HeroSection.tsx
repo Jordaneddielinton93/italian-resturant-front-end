@@ -1,4 +1,9 @@
-import { Box, keyframes, usePrefersReducedMotion } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  keyframes,
+  usePrefersReducedMotion,
+} from "@chakra-ui/react";
 import React from "react";
 
 import { chakra } from "@chakra-ui/react";
@@ -6,6 +11,8 @@ import { Image } from "@chakra-ui/react";
 import HeroCarousel from "../HeroCarousel/HeroCarousel";
 import { useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
+import { GiImperialCrown } from "react-icons/gi";
+import OrderNow_Button from "../Buttons/OrderNow_Button";
 const spin = keyframes`
  from{
     transform:rotate(0deg)
@@ -24,20 +31,18 @@ export default function HeroSection({ isHomePage }: Props) {
 
   const animation = usePrefersReducedMotion()
     ? undefined
-    : `${spin} infinite 50s linear alternate`;
+    : `${spin} infinite 120s linear alternate`;
 
   return (
     <Box
       as="main"
       width="100%"
-      height={["775px", "775px", "620px", "620px"]}
+      height={["775px", "775px", "780px", "780px"]}
       display="flex"
       justifyContent={["flex-start", "flex-start", "center", "space-evenly"]}
       alignItems={["center", "center", "flex-start", "flex-start"]}
       pos="relative"
       flexDir={["column", "column", "row", "row"]}
-
-      // overflowX="hidden"
     >
       <Box
         as="section"
@@ -45,15 +50,24 @@ export default function HeroSection({ isHomePage }: Props) {
         flexDir="row"
         flexDirection="column"
         justifyContent={isLargerThan390 ? "space-evenly" : "space-between"}
-        h={isLargerThan390 ? "350px" : "170px"}
+        h={isLargerThan390 ? "430px" : "180px"}
         margin={isLargerThan390 ? "60px 0 0 0" : "20px"}
         zIndex="1"
         overflowX="hidden"
       >
+        <Flex textAlign="center" justifyContent={"center"}>
+          <GiImperialCrown fontSize={"4rem"} />
+        </Flex>
         <chakra.h1
-          fontSize={["39px", "39px", "2.9rem", "2.9rem"]}
-          w={["300px", "361px", "361px", "361px"]}
-          fontWeight="semibold"
+          fontSize={["39px", "39px", "4.6rem", "4.6rem"]}
+          w={["300px", "361px", "400px", "400px"]}
+          fontWeight="bold"
+          fontFamily={"Great Vibes"}
+          textAlign="center"
+          fontStyle={"italic"}
+          textShadow=" 7px 7px rgba(0,128,0,0.2)
+          
+          "
         >
           Quick meals to your door
         </chakra.h1>
@@ -62,6 +76,8 @@ export default function HeroSection({ isHomePage }: Props) {
           display={["none", "none", "block", "block"]}
           color={"brand.Paragraph"}
           w="361px"
+          textAlign="center"
+          alignSelf={"center"}
         >
           Fresh and tasty sea food all made with the most exotic flavours!.
         </chakra.p>
@@ -70,46 +86,25 @@ export default function HeroSection({ isHomePage }: Props) {
           display={["none", "none", "block", "block"]}
           fontSize="20px"
           fontWeight="light"
+          textAlign="center"
         >
           Try Our new Salad
         </chakra.h4>
-        <Link href="/recipes">
-          <chakra.button
-            _hover={{ bg: "brand.green.200" }}
-            h="48px"
-            w="150px"
-            bg="black"
-            color="white"
-            borderRadius="30px"
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            p="0px 10px 0px 5px"
-            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-            overflow="hidden"
-          >
-            <Image
-              src="/images/Hero/bowl-icon.png"
-              alt="bowl-icon"
-              width="42px"
-              height="42px"
-            />{" "}
-            Order Now
-          </chakra.button>
-        </Link>
+
+        <OrderNow_Button />
       </Box>
-      <chakra.span zIndex="2">
-        <Box as="span" zIndex="1" borderRadius="100%">
+      <chakra.span zIndex="1">
+        <Box as="span" borderRadius="100%">
           <Image
             animation={isHomePage ? animation : ""}
             src={
               isHomePage
-                ? "/images/Hero/bowl.png"
+                ? "/images/Hero/bowl2.png"
                 : "/images/Hero/chef-cutout.png"
             }
             alt={isHomePage ? "bowl icon" : "chef icon"}
-            width={["300px", "390px", "390px", "390px"]}
-            height={["300px", "390px", "390px", "390px"]}
+            width={["300px", "390px", "340px", "450px"]}
+            height={["300px", "390px", "340px", "450px"]}
           />
         </Box>
       </chakra.span>
@@ -121,13 +116,12 @@ export default function HeroSection({ isHomePage }: Props) {
         position="absolute"
         right="0"
         top="-90px"
-        zIndex="0"
         overflow="visible"
       >
         <Image
           src="/images/Hero/graniteBg.png"
           alt="granite kitchen top"
-          height="620px"
+          height="750px"
           width="367px"
         />
       </Box>

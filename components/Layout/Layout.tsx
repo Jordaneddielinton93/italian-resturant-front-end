@@ -32,12 +32,14 @@ export default function Layout({ children }: Props) {
       bg="white"
       position="relative"
       maxW="1200px"
-      m="auto"
+      // m="auto"
       margin="auto"
       marginTop={isLargerThan390 ? "40px" : 0}
-      borderRadius={isLargerThan390 ? "20px" : 0}
+      borderRadius={5}
       data-testid="Layout"
       boxShadow={isLargerThan390 ? "rgba(0, 0, 0, 0.24) 0px 3px 8px" : 0}
+      overflow="hidden"
+      border={"inset thick white"}
     >
       <Navigation />
       {children}

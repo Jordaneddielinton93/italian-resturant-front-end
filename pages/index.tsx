@@ -16,9 +16,9 @@ export default function Home() {
       </Head>
       <HeroSection isHomePage={true} />
       <FoodSelection />
-      <FoodPopularity />
       <FoodTestimonials />
       <FoodPopularMeals />
+      <FoodPopularity />
       <ImageCarousel />
     </div>
   );

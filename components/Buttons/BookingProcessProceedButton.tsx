@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeMenuStage } from "../01-Reducers/resturantSlice";
-
+import styles from "./styles.module.css";
 export default function BookingProcessProceedButton() {
   let { menuBasket, menuStage } = useSelector((state: any) => state.resturant);
   let dispatch = useDispatch();
@@ -10,6 +10,7 @@ export default function BookingProcessProceedButton() {
   return (
     <>
       <Button
+        className={styles.custom_btn}
         display={menuStage != "Checkout" ? "inline" : "none"}
         mt={"5px"}
         onClick={() =>

@@ -41,9 +41,9 @@ function FoodPopularity({}: Props) {
         overflowX={["scroll", "scroll", "scroll", "hidden"]}
         justifyContent={"space-evenly"}
       >
-        <FoodPopularityCard />
-        <FoodPopularityCard />
-        <FoodPopularityCard />
+        {[5, 6, 7].map((numb) => (
+          <FoodPopularityCard key={numb} numb={numb} />
+        ))}
       </Flex>
       <chakra.span
         pos="absolute"
