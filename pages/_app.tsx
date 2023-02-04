@@ -37,12 +37,14 @@ const theme = extendTheme({
 });
 
 import { store } from "@/components/02-store/store";
+import Bubble from "@/components/animation/Bubble";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <UserProvider>
         <ChakraProvider theme={theme}>
+          <Bubble />
           <Layout>
             <Component {...pageProps} />
           </Layout>

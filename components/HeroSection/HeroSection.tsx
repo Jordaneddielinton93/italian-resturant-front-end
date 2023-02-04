@@ -12,6 +12,7 @@ import HeroCarousel from "../HeroCarousel/HeroCarousel";
 import { useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
 import { GiImperialCrown } from "react-icons/gi";
+import OrderNow_Button from "../Buttons/OrderNow_Button";
 const spin = keyframes`
  from{
     transform:rotate(0deg)
@@ -89,31 +90,8 @@ export default function HeroSection({ isHomePage }: Props) {
         >
           Try Our new Salad
         </chakra.h4>
-        <Link href="/recipes">
-          <chakra.button
-            _hover={{ bg: "brand.green.200" }}
-            h="48px"
-            w="150px"
-            bg="black"
-            color="white"
-            borderRadius="5px"
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            p="0px 10px 0px 5px"
-            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-            overflow="hidden"
-            alignSelf={"center"}
-          >
-            <Image
-              src="/images/Hero/bowl-icon.png"
-              alt="bowl-icon"
-              width="42px"
-              height="42px"
-            />{" "}
-            Order Now
-          </chakra.button>
-        </Link>
+
+        <OrderNow_Button />
       </Box>
       <chakra.span zIndex="1">
         <Box as="span" borderRadius="100%">

@@ -39,6 +39,7 @@ export default function Layout({ children }: Props) {
       data-testid="Layout"
       boxShadow={isLargerThan390 ? "rgba(0, 0, 0, 0.24) 0px 3px 8px" : 0}
       overflow="hidden"
+      border={"inset thick white"}
     >
       <Navigation />
       {children}

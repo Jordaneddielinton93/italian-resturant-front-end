@@ -18,8 +18,6 @@ html{
 body{
   background-color: #202121!important; 
   /* background-image: url("/images/Misc/mainBG.png")!important; */
-
-  
 }
 .linksTag a{
   font-family: "Great Vibes" !important;
@@ -30,7 +28,7 @@ color: #A7A6A7;
 }
 
 .linksTag .menuItem a{
-  color: green!important;
+  color: #161A19!important;
 }
 
 
