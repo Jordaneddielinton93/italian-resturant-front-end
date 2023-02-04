@@ -43,7 +43,7 @@ export default function Menu({ data }: { data: recipesTypes }) {
         recipeTag={recipeTag}
       />
       <Flex
-        borderTop={"solid thin black"}
+        borderTop={"solid thin #01BC5A"}
         justifyContent="space-between"
         flexDir={["column-reverse", "column-reverse", "row", "row"]}
       >

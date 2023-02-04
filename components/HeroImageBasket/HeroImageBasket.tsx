@@ -20,35 +20,50 @@ export default function HeroImageBasket({ showBasket }: Props) {
       flexDir={["column", "row", "row", "row"]}
     >
       <Flex
-        flexDir={"column"}
-        justifyContent="center"
-        paddingLeft={["10px", "50px", "80px", "100px"]}
-        bgImage={"/images/Recipes/heroImg.png"}
-        bgSize="cover"
-        // bgColor={"pink"}
         w="100%"
+        padding={"4px"}
+        sx={{
+          backgroundImage:
+            "linear-gradient(-43deg, #CE2B37 0%, #EDF1F4 46%, #019245 100%)",
+        }}
+        _hover={{
+          backgroundImage:
+            "linear-gradient(43deg, #CE2B37 0%, #EDF1F4 46%, #019245 100%)",
+        }}
         m={"0px 20px 0 0"}
-        border="thin solid black"
       >
-        <chakra.h4 bg={"white"} w="70px" h={"20px"} textAlign="center">
-          Popular
-        </chakra.h4>
-        <chakra.h3
-          fontSize={["16px", "18px", "20px", "24px"]}
-          w={["170px", "250px", "300px", "335px"]}
-          fontWeight={"semibold"}
+        <Flex
+          flexDir={"column"}
+          justifyContent="center"
+          paddingLeft={["10px", "50px", "80px", "100px"]}
+          bgImage={"/images/Recipes/heroImg.png"}
+          bgSize="cover"
+          // bgColor={"pink"}
+          w="100%"
+          minW={"100%"}
+          m={"0px 20px 0 0"}
+          border="thin solid black"
         >
-          Boiled Eggs with Vegatable Sauce
-        </chakra.h3>
-        <Flex w="200px" justifyContent={"space-between"} alignItems="center">
-          <TimeIcon color={"black"} />
+          <chakra.h4 bg={"white"} w="70px" h={"20px"} textAlign="center">
+            Popular
+          </chakra.h4>
+          <chakra.h3
+            fontSize={["16px", "18px", "20px", "24px"]}
+            w={["170px", "250px", "300px", "335px"]}
+            fontWeight={"semibold"}
+          >
+            Boiled Eggs with Vegatable Sauce
+          </chakra.h3>
+          <Flex w="200px" justifyContent={"space-between"} alignItems="center">
+            <TimeIcon color={"black"} />
 
-          <chakra.p fontWeight={"semibold"}> 25 mins</chakra.p>
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
+            <chakra.p fontWeight={"semibold"}> 25 mins</chakra.p>
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+          </Flex>
         </Flex>
       </Flex>
       <Flex
