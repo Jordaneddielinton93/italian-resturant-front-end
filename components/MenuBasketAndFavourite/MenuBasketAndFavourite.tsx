@@ -9,8 +9,8 @@ type Props = {};
 export default function MenuBasketAndFavourite({ recipes }: any) {
   return (
     <Flex
-      w={["250px", "450px", "230px", "230px"]}
-      minW={["250px", "450px", "230px", "230px"]}
+      w={["250px", "450px", "265px", "265px"]}
+      minW={["250px", "450px", "265px", "265px"]}
       maxH="640px"
       flexDir="column"
       alignSelf={"flex-start"}

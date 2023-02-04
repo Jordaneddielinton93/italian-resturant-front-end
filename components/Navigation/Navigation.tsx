@@ -1,13 +1,12 @@
-import { Box, Flex, Image, useMediaQuery } from "@chakra-ui/react";
+import { Box, color, Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import Primary_button from "../Buttons/Primary_button";
 import NavMenu from "../Modals/NavMenu";
 
 export default function Navigation({}) {
-  // const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
-
-  function handleClickSignin() {}
+  let { asPath } = useRouter();
 
   return (
     <Box
@@ -25,8 +24,8 @@ export default function Navigation({}) {
         <Image
           cursor={"pointer"}
           src="/images/Misc/logo.png"
-          width="66px"
-          height="38px"
+          width="80px"
+          height="80px"
           alt="logo"
         />
       </Link>
@@ -35,19 +34,30 @@ export default function Navigation({}) {
         as="ul"
         display={["none", "none", "flex", "flex"]}
         w="300px"
-        marginRight="30%"
+        marginRight="50px"
         justifyContent="space-between"
         listStyleImage="none"
+        fontFamily={"Great Vibes"}
+        className="linksTag"
+        gap={"30px"}
       >
-        <Link href="/menu">Menu</Link>
-
-        <Link href="/recipes">Recipes</Link>
-
-        <Link href="/about">About</Link>
-
-        <Link href="/">Contact</Link>
-
-        <Link href="/">FAQ</Link>
+        <span className={asPath == "/menu" ? "menuItem" : ""}>
+          <Link href="/menu" className="menuA">
+            Menu
+          </Link>
+        </span>
+        <span className={asPath == "/recipes" ? "menuItem" : ""}>
+          <Link href="/recipes">Recipes</Link>
+        </span>
+        <span className={asPath == "/about" ? "menuItem" : ""}>
+          <Link href="/about">About</Link>
+        </span>
+        <span className={asPath == "/contact" ? "menuItem" : ""}>
+          <Link href="/contact">Contact</Link>
+        </span>
+        <span className={asPath == "/faq" ? "menuItem" : ""}>
+          <Link href="/faq">Faq</Link>
+        </span>
       </Box>
       <Flex
         zIndex={5}

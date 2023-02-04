@@ -29,6 +29,7 @@ const theme = extendTheme({
       },
       grey: {
         100: "#DDE5E9",
+        200: "#A7A6A7",
       },
       Paragraph: "#A7A6A7",
     },

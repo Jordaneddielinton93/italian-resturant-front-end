@@ -38,10 +38,10 @@ export default function MenuBasket({ recipes }: any) {
     <Flex
       h={["160px", "212px", "212px", "212px"]}
       minH={["160px", "212px", "212px", "212px"]}
-      w="100%"
+      w="90%"
       bg={"#EDF1F4"}
       border={"solid 1px black"}
-      m="10px 0"
+      m="10px"
       flexDir={"column"}
       alignItems="center"
     >

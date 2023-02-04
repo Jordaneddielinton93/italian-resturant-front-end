@@ -14,7 +14,7 @@ function MenuFavourites({ recipes }: any) {
       flexDir={"column"}
       justifySelf="flex-start"
       minH={"215px"}
-      w={["100%", "100%", "230px", "230px"]}
+      w={["100%", "100%", "100%", "100%"]}
       bg={"#353643"}
       zIndex="10"
       p={"5px 0"}
