@@ -4,6 +4,8 @@ This example shows how to configure Jest to work with Next.js.
 
 This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
 
+Figma Design [Figma Design](https://www.figma.com/file/CPGYJilgauAiLcVaYPiWR4/Restaurant?node-id=9%3A9&t=8rhdYrrKFoXKPw7c-0)
+
 ## How to Use
 
 Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
