@@ -8,26 +8,15 @@ Figma Design [Figma Design](https://www.figma.com/file/CPGYJilgauAiLcVaYPiWR4/Re
 
 ## How to Use
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
 
 In your terminal, run the following command:
 
 ```bash
-npx create-next-app --example with-jest with-jest-app --ts
+npm run test
 ```
 
 ```bash
-yarn create next-app --example with-jest with-jest-app --ts
-```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app --ts
-```
-
-## Run Jest Tests
-
-```bash
-npm test
+npm run dev
 ```
 
 # italian-resturant-front-end
