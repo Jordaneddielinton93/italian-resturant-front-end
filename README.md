@@ -2,7 +2,7 @@
 
 This example shows how to configure Jest to work with Next.js.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+This includes Next.js' built-in support for Global CSS, CSS Modules, Chakra.UI, Redux, Axious and TypeScript.
 
 Figma Design [Figma Design](https://www.figma.com/file/CPGYJilgauAiLcVaYPiWR4/Restaurant?node-id=9%3A9&t=8rhdYrrKFoXKPw7c-0)
 
